@@ -1,0 +1,29 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1> Jinga Template </h1>
+        <h2>{{project_name}}</h2>
+            <a href="{% url 'blog:homepage' %}">Home </a>
+            
+            {% if is_user_logged_in %}
+
+                    <ul>
+                        {% for item in fruit_list %}
+                        <li>{{item}}</li>
+                        {% endfor %}
+                    </ul>
+
+                    {% else %}
+
+                        <p>Please log in .</p>
+
+                    {% endif %}
+         
+        
+        
+    </body>
+
+</html>
