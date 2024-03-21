@@ -1,32 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
     <style>
-      .container p{
-        color: rebeccapurple;
-        font-weight:bold;
-
-      }
+        .container p {
+            color: rebeccapurple;
+            font-weight: bold;
+        }
     </style>
-
-  </head>
-  <body>
-
-    <a href="{% url 'blog:homepage' %}">Home </a>
+</head>
+<body>
     <div class="container">
-      <h1>Welcome to our website blogs !! </h1>
-      <a href="/">Home</a>
-      
-      {% for blog in all_blog %}
-      
-      <p>{{blog.title1}}</p>
-      <small>{{blog.description}}</small>
-      
-      {% endfor %}
-      
-      </div> 
-    
-  </body>
+        <h1>Welcome to our website blogs!!</h1>
+        <h4>{{project_name}}</h4>
+        <a href="/">Home</a>
+        <a href="{% url 'blog:blog_post_create'%}">Create Blog</a>
+
+        {% for blog in all_blog %}
+
+        <a href="{% url 'blog:blog_post' blog.id %}">
+            <p>{{blog.title}}</p>
+        </a>
+        <small>{{blog.body}}</small>
+
+        {% endfor %}
+
+    </div>
+</body>
 </html>

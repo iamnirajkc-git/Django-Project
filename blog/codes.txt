@@ -1,0 +1,34 @@
+venv/Scripts/activate
+
+python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py shell
+from blog.models import  Post  
+from blog.models import  Author
+Post.objects.all()
+import datetime
+date = datetime.date(2024,10,11) 
+Post.objects.all().delete()
+Author.objects.all().delete()
+Author.objects.create(name="Josh", email="josh@gmail.com", joining=date)
+author = Author.objects.get(id=10) 
+author.id
+Post.objects.create(title="Hello World!", body="H BDHWBDHW BDWB WHDHW DD", author.id=13)
+
+
+
+
+
+python manage.py dbshell
+. tables
+select * from blog_post;
+select * from blog_author;
+ DELETE  FROM blog_author;
+ .schema blog_post
+
+
+
+
+
